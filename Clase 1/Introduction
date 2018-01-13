@@ -1,0 +1,7 @@
+java -version
+
+	Retorna la versión actual de java
+
+javac es el compilador de java, sin embargo cuando se ha realizado una nueva instalación de java es posible que no sea reconocido, y esto es debido a que no se encuentra como parte de PATH en la variable de entorno. La solución es agregar el directorio en donde se encuentra instalado javac a la variable de entorno PATH, en mi caso: /usr/lib/jvm/java-8-oracle/bin
+
+En linux la variable de entorno PATH se puede editar desde consola, ingresando > sudo nano /etc/profile.d/jdk.sh, la variable es modificada por defecto al instalar.
