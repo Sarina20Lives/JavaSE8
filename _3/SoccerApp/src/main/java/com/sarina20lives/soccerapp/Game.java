@@ -16,7 +16,10 @@ public class Game {
     public Team awayTeam;
     public Goal[] goals;
     
-    public void playGame(){
+    public void playGame(int maxGoals){
+        int numberOfGoals = (int)(Math.random()*(maxGoals+1));
+        Goal[] theGoals = new Goal[numberOfGoals];
+        this.goals = theGoals;
         GameUtils.addGameGoals(this);
     }
     
@@ -28,7 +31,8 @@ public class Game {
                     .append(" mins by ")
                     .append(currGoal.thePlayer.playerName)
                     .append(" of ")
-                    .append(currGoal.theTeam.teamName);
+                    .append(currGoal.theTeam.teamName)
+                    .append("\n");
         }
         return returnString.toString();
     }

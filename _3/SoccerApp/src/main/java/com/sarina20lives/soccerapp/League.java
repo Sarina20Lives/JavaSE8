@@ -13,34 +13,15 @@ import com.sarina20lives.soccerapp.utilities.GameUtils;
  */
 public class League {
     public static void main(String[] args){
-        Team[] theTeams = createTeams();
-        Game[] theGames = createGames(theTeams);
+        League theLeague = new League();
+        Team[] theTeams = theLeague.createTeams();
+        Game[] theGames = theLeague.createGames(theTeams);
         Game currGame = theGames[0];
-        
-//        Goal goal01 = new Goal();
-//        goal01.thePlayer = currGame.homeTeam.playerArray[2];
-//        goal01.theTeam = currGame.homeTeam;
-//        goal01.theTime = 55;
-        
-//        Goal[] theGoals = {goal01};
-//        currGame.goals = theGoals;
-        
-        int numberOfGoals = (int)(Math.random()*7);
-//        System.out.println(numberOfGoals);
-
-        Goal[] theGoals = new Goal[numberOfGoals];
-        currGame.goals = theGoals;
-        currGame.playGame();
+        currGame.playGame(6);
         System.out.println(currGame.getDescription());
-        
-        
-//        System.out.println("Goal scored after " +
-//                currGame.goals[0].theTime + " mins by " +
-//                currGame.goals[0].thePlayer.playerName + " of " +
-//                currGame.goals[0].theTeam.teamName);
     }
     
-    public static Team[] createTeams(){
+    public Team[] createTeams(){
         Player player01 = new Player();
         player01.playerName = "George Eliot";
         Player player02 = new Player();
@@ -67,7 +48,7 @@ public class League {
         return theTeams;
     }
 
-    public static Game[] createGames(Team[] theTeams){
+    public Game[] createGames(Team[] theTeams){
         Game theGame = new Game();
         theGame.homeTeam=theTeams[0];
         theGame.awayTeam = theTeams[1];
