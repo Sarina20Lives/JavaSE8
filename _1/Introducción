@@ -1,0 +1,47 @@
+Niveles de certificaciones:
+
+OCA -> Associate
+OCP -> Programmer
+OCE -> Expert
+OCM -> Master
+
+El OCM no tiene como prerrequisito un OCE, pero si un OCP.
+
+java -version retorna la versión actual de java
+
+javac es el compilador de java, sin embargo cuando se ha realizado una nueva instalación de java es posible que no sea reconocido, y esto es debido a que no se encuentra como parte de PATH en la variable de entorno. La solución es agregar el directorio en donde se encuentra instalado javac a la variable de entorno PATH, en mi caso: /usr/lib/jvm/java-8-oracle/bin
+
+En linux la variable de entorno PATH se puede editar desde consola, ingresando > sudo nano /etc/profile.d/jdk.sh, aunque la variable es modificada por defecto al instalar.
+
+Anotaciones respecto a un primer programa java:
+
+- Todo programa sin importar su simplicidad siempre se debe trabajar en clase para poder ser ejecutado 
+- El archivo y la clase se debe llamar igual
+- Una clase puede poseer un método main, pero solo puede tener uno
+- En un programa con más de una clase, más de una clase puede tener un método main
+
+Compilación 
+- Ir al directorio en donde se encuentra la clase principal (la que posee el método main que se desea ejecutar primero)
+- Para compilar > javac NameClase.java
+	El compilador genera un archivo .class que se puede ejecutar, este archivo está escrito en bytecode  
+- Para ejecutar > java NameClase
+	Para ejecutar el archivo, tomar en cuenta que no se debe adjuntar la extensión del archivo
+- Para imprimir la metadata de la clase en consola > javap NameClase   
+
+Anotaciones:
+Toda clase en un programa pertenece a un package, siendo el package "default" su package si este no se especifica.
+Java es case-sensitive, por tanto distigue entre mayúsculas y minúsculas.
+Los nombres de clases deben iniciar con mayúscula y ser en singular (por estándar).
+El nombre de una clase debe ser igual al nombre del archivo para ser reconocida.
+Una clase de java se puede componer de dos ramas: objetos (data) y metodos(operaciones)
+Toda clase que pertenezca a un package no se podrá ejecutar si no se indica el package.
+El método main es un punto de entrada para el código java
+
+Package
+Su nombre debe iniciar con minúscula
+El package es solo una referencia lógica
+
+String literal
+Cadena de carácteres que posee la capacidad de almacenaje definida en la virtual machine
+
+Buscar el ejercicio 5-2
