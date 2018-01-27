@@ -12,7 +12,7 @@ public class ShoppingCar{
 		System.out.println(">-- Trabajando con Item");
 		Item item = new Item();
 		if(item.setColor('B'))
-			System.out.println("El nuevo color del item es: "+ item.color);
+			System.out.println("El nuevo color del item es: "+ item.getColor());
 		else
 			System.out.println("El código de color no es valido");
 
@@ -21,6 +21,11 @@ public class ShoppingCar{
 		item.display();
 		item.setItemsFields('D', 3, "Sobrecarga 2", 34.89);
 		item.display();
+
+		System.out.println(">-- Usando private atributes for Item");
+		Item item1 = new Item();
+		Item item2 = new Item();
+		Item item3 = new Item();
 	}
 
 

@@ -1,8 +1,30 @@
 public class Item{
-	char color;
-	String desc;
-	int quantity;
-	double price;
+	private char color;
+	private String desc;
+	private int quantity;
+	private double price;
+	private int id;
+	private static int nextId = 0;
+
+	public Item(){
+		setId();
+		desc = "Esta es la descripción";
+		price = 0.0;
+		System.out.println("El objeto " + id + " ha sido construido");	
+	}
+
+	public void setId(){
+		this.id=nextId++;
+	}
+
+	//Agregando método de acceso para atributo privado
+	public char getColor(){
+		return this.color;	
+	}
+	//Overloading no permitido, dado que existe otro método con la misma firma (mismo nombre, mismo tipo de parametro y misma cantidad de parametros)
+	//public void setColor(char c){
+	//	this.color = c;	
+	//}
 
 	public boolean setColor(char c){
 		if((c>='a' && c<='z') ||
