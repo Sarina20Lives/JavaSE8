@@ -22,13 +22,13 @@ public class GameUtils {
         int team, player;
         
         for(int i=0; i<currGame.goals.length ; i++){
-            team = (int)(Math.random()*1);
+            team = (int)(Math.random()*2);
             if(team==0)
                 elegido = currGame.homeTeam;
             else
-            elegido = currGame.awayTeam;
-            player = (int)(Math.random()*(elegido.playerArray.length-1));
-            jugador = elegido.playerArray[player];
+                elegido = currGame.awayTeam;
+            player = (int)(Math.random()*(elegido.getPlayerArray().length-1));
+            jugador = elegido.getPlayerArray()[player];
             currGame.goals[i] = new Goal(elegido, jugador, Math.random()*91);
         }
     }

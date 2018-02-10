@@ -1,0 +1,55 @@
+Java........................................................................
+
+INHERITANCE/HERENCIA:
+
+> > H E R E N C I A  I M P L I C I T A
+Todas las clases de Java heredan por defecto de la clase Object, esa es la razón por la cual toda instancía de clase tiene métodos equals, toString y hashCode.
+
+Clase padre = superclass y clase hija = subclass.
+
+ ________       __________      _______
+| Object | <-- | Clothing | <--| Shirt |
+ --------       ----------      -------
+                    ^       __________
+                    |_____ | Trousers | 
+                    	    ----------
+
+Con la herencia se produce poca duplicación de código, los constructores de las superclasses deben llamarce son la palabra "super(parametros)", los constructores de las clases padres deben ejecutarse primero, debido a que podrían existir inicializaciones de atributos que si pudieran heredarse. 
+
+> >  H E R E N C I A  E X P L I C I T A
+Una clase cualquiera podría heredar de cualquier otra clase pero solo una, en la declaración de la clase colocar la sentencia "extends nombre_super_class"
+Ejemplo:
+	public class Shirt extends Clothing{ //code }
+
+> >  C O N S T R U C T O R E S 
+Al ejecutar el constructor de una clase hija, siempre se busca llamar al constructor por defecto de la clase padre, si la clase padre no posee su constructor por defecto, no se podría compilar, sin embargo, si se quiere que se llame a un constructor específico de la clase padre y no al constructor por defecto, se puede agregar como primera línea del constructor de la clase hija "super(parametros)", la llamada super() sin parametros busca llamar al construtor por defecto de la clase padre. 
+
+La llamada "super" puede ir únicamente en la primera línea de un constructor de la clase hija. Si se coloca en otra línea no compilará.
+
+Siempre, por defecto, en un constructor de la clase hija, intentará llamar al constructor por defecto de la clase padre.
+
+Podrían existir constructores en la clase hija que únicamente llamen a otros constructores de ella, y al menos uno de sus constructores, el último en ser llamada será quien llame al constructor de la clase padre.
+
+E j e m p l o: 
+
+	// C l a s s e s
+	public class Shirt extends Clothing{
+		public int size;
+		public Shirt(int size){
+			this(size, "constructor 1");
+		}
+		public String(int size, String constructor){
+			//Aquí se hace la llamada implicita del constructor por defecto por Clothing
+			System.out.println("Size: " + size + " Constructor 2 - " + constructor);
+		}
+	}
+	public class Clothing{}
+	public class Test{
+		public static void main(String...args){
+			Shirt shirt = new Shirt(34);
+		}
+	}
+	// O u t p u t : Size: 34 Constructor 2 - constructor 1
+
+
+
