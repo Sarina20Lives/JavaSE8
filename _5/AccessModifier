@@ -1,0 +1,15 @@
+Java ..........................................................
+
+> > A C C E S S  M O D I F I E R S
+
+d e f a u l t
+Accesible dentro del mismo paquete.
+
+p r i v a t e
+Accesible solo dentro de la misma clase.
+
+p u b l i c 
+Accesible en cualquier punto por medio de instancia, herencia, etc. 
+
+p r o t e c t e d
+Accesible dentro del mismo paquete y por herencia y dentro de la clase.
