@@ -1,0 +1,93 @@
+C l a s e s  P o l i m o r f i c a s
+
+Las clases del JDK son polimorficas, debido a que puede tomar formas. 
+Cualquier clase es polimorfica a nivel de objeto.
+
+Toda clase por definición extiende de objeto, por tanto todos las instancias de esa clase poseen el método toString de objeto, sin embargo, el método toString puede ser sobreescrito.
+
+
+S o b r e e s c r i t u r a  d e  M é t o d o s 
+
+Para sobreescribir un ḿétodo hay que considerar lo siguiente:
+1. Respetar la firma
+2. El nivel de acceso no puede ser más reestrictivo
+3. Un método abstracto no se puede sobreescribir, corresponde implementarlo.
+
+
+I n t e r f a z 
+
+Es similar a una clase abstracta pero difiere en: 
+1. Todos sus métodos son abstractos excepto los métodos default (concretos)
+	El abstract a los métodos podría no ser incluído y el compilador lo agrega de forma automática.
+2. Una interfaz no extiende, se implementa
+3. Una clase puede implementar más de una interfaz
+El nombre de una interfaz debería de nombrarse como un adjetivo. (printable, imprimible, contable... etc.. )
+
+
+C l a s i f i c a c i ó n  d e  L e n g u a j e s
+
+Java es multiparadigma, siendo POO su base, también es orientado a aspecto (@anotaciones), funcional
+Lenguaje de Programación
+	Imperativo
+		Procedural
+			Pascal
+			C
+		POO
+			Java
+			C#
+	Declarativo
+		Funcional
+			Clojure
+			Java
+		Lógico
+
+
+I n t e r f a z  f u n c i o n a l
+
+Una interfaz funcional, se puede anotar con @FuntionalInterface, para que sea una interfaz funcional solo debe tener un método abstrato, la anotación 
+Puede poseer métodos default extras, pero solo un método abstracto.
+Una Lambda se conoce como la implementación de una interfaz funcional.
+
+
+L a m b d a  E x p r e s s i o n s
+
+Métodos usados como argumento de otro método. 
+Los métodos tienen: 
+	1. Parametros de entrada
+	2. Cuerpo
+	3. Return value
+Los parametros como lambda pueden ser... 
+	1. Un operador unario (UnaryOperator), el cual retorna lo que recibe, del mismo tipo que recibe.
+		s -> s.toUpperCase();
+		s -> ":)";
+	2. Predicado, es una expresión lambda que siempre retorna un valor boolean. (equals, relational operator)
+		s -> s.equals("x");
+		s -> s < 34;
+
+
+E x c e p t i o n s  i n  J a v a 
+
+Una excepcion en java son situaciones no esperadas, Java lanza la excepción y lo que se debe programar es la respuesta cuando esta ocurra.
+Ejemplos: java.lang.ArrayIndexOutOfBoundsException. 
+
+E x c e p c i o n e s  C h e c k e d: 
+Se obliga a manipular la excepción (try-catch).
+
+
+E x c e p c i o n e s  U n c h e k e d: 
+No se obliga a manipular la excepción.
+	RuntimeExceptions:
+	2. IllegalArgumentException
+	3. NullPointerException
+	4. ArrayIndexOutBoundsException
+	5. ClassCastException
+	6. ArithmeticException
+	7. IllegalStateException
+		7.1. NumberFormatException
+
+T h r o w a b l e
+	Error (no recuperables)
+	Exception (recuperables) (Checked)
+		RuntimeException (Uncheked)
+
+
